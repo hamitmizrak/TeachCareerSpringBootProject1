@@ -1,5 +1,6 @@
 package com.hamitmizrak.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -16,6 +17,9 @@ import java.util.Date;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
+
+//Json pars için işlem yapılmasına izin vermemek
+@JsonIgnoreProperties(value={"created_date,update_date"},allowGetters = true)
 abstract public class BaseEntiy {
 
     @Id
@@ -45,6 +49,6 @@ abstract public class BaseEntiy {
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
-    @Column(name="created_date",updatable = false)
+    @Column(name="system_created_date",updatable = false)
     private Date date;
 }
