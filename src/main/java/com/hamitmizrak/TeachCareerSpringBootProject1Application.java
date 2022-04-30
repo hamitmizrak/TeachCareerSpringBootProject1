@@ -13,6 +13,9 @@ public class TeachCareerSpringBootProject1Application {
 
     public static void main(String[] args) {
         SpringApplication.run(TeachCareerSpringBootProject1Application.class, args);
+
+        //JOptionalPane Kullanmak icin
+        System.setProperty("java.awt.headless", "false");
     }
 
 }
