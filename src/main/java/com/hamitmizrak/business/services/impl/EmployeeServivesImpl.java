@@ -94,7 +94,7 @@ public class EmployeeServivesImpl implements EmployeeServices {
 
         //findEntity
         EmployeeEntity entityFind=
-                (EmployeeEntity) employeeRepository.
+             employeeRepository.
                         findById(id)
                         .orElseThrow(()->new ResourceNotFoundException("Employee "+id+" id bulamadı !!!"));
 
@@ -102,7 +102,7 @@ public class EmployeeServivesImpl implements EmployeeServices {
         entityFind.setEmployeeName(entity.getEmployeeName());
         entityFind.setEmployeeEmail(entity.getEmployeeEmail());
 
-        EmployeeEntity entity2= (EmployeeEntity) employeeRepository.save(entityFind);
+        EmployeeEntity entity2= employeeRepository.save(entityFind);
         //EntityToDto
         EmployeeDto dto=  EntityToDto(entity2);
         return  ResponseEntity.ok(dto);
@@ -112,7 +112,7 @@ public class EmployeeServivesImpl implements EmployeeServices {
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(Long id) {
         //findEntity
         EmployeeEntity entityFind=
-                (EmployeeEntity) employeeRepository.
+                 employeeRepository.
                         findById(id)
                         .orElseThrow(()->new ResourceNotFoundException("Employee "+id+" id bulamadı !!!"));
 
