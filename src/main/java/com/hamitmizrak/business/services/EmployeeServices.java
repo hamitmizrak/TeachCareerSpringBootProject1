@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Map;
 
+//SERVICES INTERFACE
 //CRUD
 public interface EmployeeServices {
 
@@ -29,6 +30,4 @@ public interface EmployeeServices {
 
     //delete
     public ResponseEntity<Map<String,Boolean>> deleteEmployee(Long id);
-
-
 }

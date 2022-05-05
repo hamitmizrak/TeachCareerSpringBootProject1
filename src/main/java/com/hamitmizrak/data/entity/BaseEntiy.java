@@ -13,9 +13,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.util.Date;
 
+//superClass
 @MappedSuperclass
 @Getter
 @Setter
+
+//Audit tanıtmak
 @EntityListeners(AuditingEntityListener.class)
 
 //Json pars için işlem yapılmasına izin vermemek

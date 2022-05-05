@@ -10,10 +10,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+//LOMBOK
 @Data
 @NoArgsConstructor
 
-
+//ENTİTY
 @Entity
 @Table(name = "employees")
 public class EmployeeEntity extends BaseEntiy implements Serializable {

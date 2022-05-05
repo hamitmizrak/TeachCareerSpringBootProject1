@@ -43,7 +43,6 @@ public class EmployeeServivesImpl implements EmployeeServices {
     }
 
     //CRUD
-
     //save
     //http://localhost:8080/save/employees
     @Override
@@ -84,7 +83,7 @@ public class EmployeeServivesImpl implements EmployeeServices {
     }
 
 
-    //filter:find
+    //Update
     //http://localhost:8080/update/employees/1
     @Override
     @PutMapping("/update/employees/{id}")
@@ -108,8 +107,11 @@ public class EmployeeServivesImpl implements EmployeeServices {
         return  ResponseEntity.ok(dto);
     }
 
+    //Delete
+    //http://localhost:8080/delete/employees/1
     @Override
-    public ResponseEntity<Map<String, Boolean>> deleteEmployee(Long id) {
+    @DeleteMapping("/delete/employees/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable(name="id")  Long id) {
         //findEntity
         EmployeeEntity entityFind=
                  employeeRepository.

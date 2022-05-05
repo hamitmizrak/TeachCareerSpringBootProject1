@@ -6,6 +6,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 //Baca Sil
 
+//PasswordEncoderBean JWT BEAN
 @Configuration
 public class PasswordEncoderBean {
 

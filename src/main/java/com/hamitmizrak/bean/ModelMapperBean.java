@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //Baca Sil
 
+//MODELMAPPER BEAN(REST)
 @Configuration
 public class ModelMapperBean {
 
