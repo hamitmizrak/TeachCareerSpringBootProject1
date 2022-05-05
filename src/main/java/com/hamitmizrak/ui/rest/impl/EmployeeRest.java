@@ -1,4 +1,5 @@
 package com.hamitmizrak.ui.rest.impl;
+
 //http://localhost:8080/api/v1/
 import com.hamitmizrak.business.dto.EmployeeDto;
 import com.hamitmizrak.business.services.EmployeeServices;
@@ -71,6 +72,7 @@ public class EmployeeRest implements IEmployeeRest {
     @Override
     @DeleteMapping("/employees/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable(name = "id") Long id) {
+        services.deleteEmployee(id);
         Map<String,Boolean> response=new HashMap<>();
         response.put("deleted",Boolean.TRUE);
         return ResponseEntity.ok(response);
