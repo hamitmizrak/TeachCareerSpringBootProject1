@@ -14,12 +14,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class TeachCareerSpringBootProject1ApplicationTests implements ITestData {
+class TeachCareerSpringBootProject1ApplicationTests {
+//class TeachCareerSpringBootProject1ApplicationTests implements ITestData {
 
 
     @Autowired
     EmployeeRepository employeeRepository;
-
+ /*
     //SAVE
     @Override
     @Test
@@ -32,6 +33,7 @@ class TeachCareerSpringBootProject1ApplicationTests implements ITestData {
         //eger: 1 id data bulamazsa Exception fırlat: java.util.NoSuchElementException: No value present
         assertNotNull(employeeRepository.findById(1L).get());
     }
+
 
     //FIND
     @Override
@@ -72,5 +74,5 @@ class TeachCareerSpringBootProject1ApplicationTests implements ITestData {
         employeeRepository.deleteById(1L);
         //istenilen data yoksa: No class com.hamitmizrak.data.entity.EmployeeEntity entity with id 1 exists!
         assertThat(employeeRepository.existsById(1L)).isFalse();
-    }
+    }*/
 }

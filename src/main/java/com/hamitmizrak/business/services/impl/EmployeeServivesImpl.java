@@ -87,7 +87,7 @@ public class EmployeeServivesImpl implements EmployeeServices {
     //http://localhost:8080/update/employees/1
     @Override
     @PutMapping("/update/employees/{id}")
-    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name="id")  Long id, EmployeeDto employeeDto) throws Throwable {
+    public ResponseEntity<EmployeeDto> updateEmployee(  @PathVariable(name="id")  Long id, @RequestBody EmployeeDto employeeDto) throws Throwable {
         //DtoToEntity
         EmployeeEntity entity=   DtoToEntity(employeeDto);
 

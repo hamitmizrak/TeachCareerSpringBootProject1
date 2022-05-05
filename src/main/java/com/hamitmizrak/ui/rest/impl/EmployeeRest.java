@@ -16,7 +16,7 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1")
 public class EmployeeRest implements IEmployeeRest {
-//14:00-20:00
+
     @Autowired
     EmployeeServices services;
 
@@ -34,7 +34,7 @@ public class EmployeeRest implements IEmployeeRest {
     //http://localhost:8080/api/v1/employees
     @Override
     @PostMapping("/employees")
-    public EmployeeDto createEmployee( @RequestBody  EmployeeDto employeeDto) {
+    public EmployeeDto createEmployee(@RequestBody EmployeeDto employeeDto) {
         services.createEmployee(employeeDto);
         return employeeDto;
     }
@@ -62,7 +62,7 @@ public class EmployeeRest implements IEmployeeRest {
     //http://localhost:8080/api/v1/employees/1
     @Override
     @PutMapping("/employees/{id}")
-    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name = "id")  Long id, EmployeeDto employeeDto) throws Throwable {
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name = "id")  Long id, @RequestBody EmployeeDto employeeDto) throws Throwable {
         services.updateEmployee(id,employeeDto);
         return ResponseEntity.ok(employeeDto);
     }

@@ -1,7 +1,9 @@
 package com.hamitmizrak.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedBy;
@@ -15,8 +17,8 @@ import java.util.Date;
 
 //superClass
 @MappedSuperclass
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 
 //Audit tanıtmak
 @EntityListeners(AuditingEntityListener.class)
