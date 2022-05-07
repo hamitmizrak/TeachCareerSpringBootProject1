@@ -1,35 +1,32 @@
-import './App.css'
-import React from 'react'
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react"
+import "./App.css";
 
-import HeaderComponent from './component/HeaderComponent'
-import FooterComponent from './component/FooterComponent'
-// import {  Route, Routes } from "react-router-dom";
-//  import ListEmployeeComponent from './component/ListEmployeeComponent'
-//  import CreateEmployeeComponent from './component/CreateEmployeeComponent'
-//  import ViewEmployeeComponent from './component/ViewEmployeeComponent'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HeaderComponent from "./components/HeaderComponent";
+import ListEmployeeComponent from "./components/ListEmployeeComponent";
+import CreateEmployeeComponent from "./components/CreateEmployeeComponent";
+import ViewEmployeeComponent from "./components/ViewEmployeeComponent";
+import FooterComponent from "./components/FooterComponent";
 
-
+// non-stateless:durumsuz yani bir yere değer döndermeyen:void
 function App() {
   return (
     <div>
-       <HeaderComponent />
-       {/* <Routes>
-            <Route path="/" element={ListEmployeeComponent}></Route>
-            <Route path="/employees" element={ListEmployeeComponent}></Route>
-            <Route
-              path="/add-employee/:id"
-              element={CreateEmployeeComponent}
-            ></Route>
-            <Route
-              path="/view-employee/:id"
-              element={ViewEmployeeComponent}
-            ></Route>
-      </Routes>  */}
-      <FooterComponent />
+      <Router>
+        <HeaderComponent />
+
+        <div className="container">
+          <Switch>
+            <Route path="/" exact component={ListEmployeeComponent}></Route>
+            <Route path="/employees"  component={ListEmployeeComponent}></Route>
+            <Route path="/add-employee/:id"  component={CreateEmployeeComponent}></Route>
+            <Route path="/view-employee/:id"  component={ViewEmployeeComponent}></Route>
+          </Switch>
+        </div>
+        <FooterComponent/>
+      </Router>
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;

@@ -1,6 +1,5 @@
 package com.hamitmizrak.data.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,21 +12,22 @@ import java.io.Serializable;
 //LOMBOK
 @Data
 @NoArgsConstructor
+@Builder
 
 //ENTİTY
 @Entity
 @Table(name = "employees")
 public class EmployeeEntity extends BaseEntiy implements Serializable {
-    public final static long serialVersionUID=1L;
+    public final static long serialVersionUID = 1L;
 
-    @Column(name="employee_name")
+    @Column(name = "employee_name")
     private String employeeName;
 
-    @Column(name="employee_email")
+    @Column(name = "employee_email")
     private String employeeEmail;
 
     //parametreli constructor
-    public EmployeeEntity( String employeeName, String employeeEmail) {
+    public EmployeeEntity(String employeeName, String employeeEmail) {
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
     }

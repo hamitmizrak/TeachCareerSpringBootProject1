@@ -8,7 +8,6 @@ export default class HeaderComponent extends Component {
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
               <div className="container">
                 <a className="navbar-brand" href="#">
-
                 <i className={this.props.icon}></i>
 
                 </a>
@@ -33,13 +32,11 @@ export default class HeaderComponent extends Component {
                         </li>
                     </ul>
                     <form className="d-flex my-2 my-lg-0">
-                        
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
           </div>
         </nav>
-        
     </div>
     )
   }
@@ -47,6 +44,6 @@ export default class HeaderComponent extends Component {
 
 HeaderComponent.defaultProps = {
     content:"TeachCareer",
-    icon:'fa-brands fa-avianex'
+    icon:'fa-regular fa-user'
 }
 

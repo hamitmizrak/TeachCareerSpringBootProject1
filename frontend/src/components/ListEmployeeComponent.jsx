@@ -4,7 +4,7 @@ class ListEmployeeComponent extends Component {
     render() {
         return (
             <div>
-                
+                <p>List</p>
             </div>
         );
     }

@@ -1,6 +1,5 @@
 package com.hamitmizrak.ui.rest.impl;
 
-//http://localhost:8080/api/v1/
 import com.hamitmizrak.business.dto.EmployeeDto;
 import com.hamitmizrak.business.services.EmployeeServices;
 import com.hamitmizrak.ui.rest.IEmployeeRest;
@@ -12,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//http://localhost:8080/api/v1/
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1")
@@ -27,7 +27,6 @@ public class EmployeeRest implements IEmployeeRest {
     public String getRoot(){
         return "index";
     }
-
 
 
     //SAVE
