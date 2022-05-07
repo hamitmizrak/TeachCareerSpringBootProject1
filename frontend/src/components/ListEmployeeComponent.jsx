@@ -9,7 +9,7 @@ class ListEmployeeComponent extends Component {
 
     //durum degiskeni
     this.state = {
-      employee: [],
+      employees: [],
     }
 
     //bind
@@ -25,7 +25,7 @@ class ListEmployeeComponent extends Component {
 
   //View Sayfasına gidecek
   viewEmployee(id) {
-    this.props.history.push(`/add-employee/${id}`)
+    this.props.history.push(`/view-employee/${id}`);
   }
 
   //Güncelleme Sayfasına gidecek
@@ -59,13 +59,13 @@ class ListEmployeeComponent extends Component {
         <h3 className="text-danger">Listem</h3>
         <div className="container">
           <div className="row mb-3">
-            <button className="btn btn-primary" onClick={this.addEmployee}>
+            <button className="btn btn-primary btn-dm" onClick={this.addEmployee}>
               Ekleme
             </button>
           </div>
 
           <div className="row mb-3">
-            <table>
+            <table className="table table-striped table-hover table-bordered">
               <thead>
                 <tr>
                   <th>Müşteri ID</th>
@@ -75,17 +75,19 @@ class ListEmployeeComponent extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>employeeId</td>
-                  <td>employeeName</td>
-                  <td>employeeEmail</td>
+                {this.state.employees.map((employee) => (
+                  <tr key={employee.employeeId}>
+                    <td>{employee.employeeId}</td>
+                    <td>{employee.employeeName}</td>
+                    <td>{employee.employeeEmail}</td>
 
-                  <td>
-                    <button className="btn btn-success">Güncelle</button>
-                    <button className="btn btn-primary">Göster</button>
-                    <button className="btn btn-danger">Sil</button>
-                  </td>
-                </tr>
+                    <td>
+                      <button onClick={()=>this.updateEmployee(employee.employeeId)}  className="btn btn-success">Güncelle</button>
+                      <button onClick={()=>this.viewEmployee(employee.employeeId)} style={{marginLeft:"10px"}} className="btn btn-primary">Göster</button>
+                      <button onClick={()=>this.deleteEmployee(employee.employeeId)}  className="btn btn-danger" style={{marginLeft:"10px"}}>Sil</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
